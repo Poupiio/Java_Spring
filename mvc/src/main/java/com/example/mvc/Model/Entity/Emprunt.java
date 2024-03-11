@@ -1,4 +1,4 @@
-package com.example.mvc;
+package com.example.mvc.Model.Entity;
 
 import java.time.LocalDate;
 import jakarta.persistence.Entity;
@@ -20,6 +20,10 @@ public class Emprunt {
 	@ManyToOne(fetch = FetchType.LAZY)
 	@JoinColumn(name = "livre_id")
 	private Livre livre;
+	
+	@ManyToOne(fetch = FetchType.LAZY)
+	@JoinColumn(name = "utilisateur_id")
+	private Utilisateur utilisateur;
 
 	public LocalDate getDateEmprunt() {
 		return dateEmprunt;
@@ -43,6 +47,14 @@ public class Emprunt {
 
 	public void setLivre(Livre livre) {
 		this.livre = livre;
+	}
+
+	public Utilisateur getUtilisateur() {
+		return utilisateur;
+	}
+
+	public void setUtilisateur(Utilisateur utilisateur) {
+		this.utilisateur = utilisateur;
 	}
 	
 	
