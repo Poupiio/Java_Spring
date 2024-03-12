@@ -40,10 +40,10 @@ public class TaskController {
 	}
 	
 	// Afficher une tâche par son id
-//	@GetMapping("/tasks/{id}")
-//	public String getTask(@PathVariable Integer id) {
-//		return task.getTask(id);
-//	}
+	@GetMapping("/tasks/{id}")
+	public String getTask(@PathVariable Integer id) {
+		return task.getTask(id);
+	}
 	
 	// Création d'une nouvelle tâche
 	@PostMapping("/tasks")

@@ -17,10 +17,10 @@ public class TaskService {
 	}
 	
 	// Afficher une tâche par son id
-//	public Integer getTask(Integer index) {
-//		return index;
-//	}
-//	
+	public String getTask(Integer index) {
+		return this.tasks.get((int) index);
+	}
+
 	// Création d'une nouvelle tâche
 	public List<String> addTask(String newTask) {
 		// Ajout à la liste "tasks"
