@@ -39,9 +39,11 @@ public class TaskController {
 		return task.getTasks();
 	}
 	
-	// Afficher une tâche grâce à son id
-	@GetMapping("/tasks/{id}")
-	
+	// Afficher une tâche par son id
+//	@GetMapping("/tasks/{id}")
+//	public String getTask(@PathVariable Integer id) {
+//		return task.getTask(id);
+//	}
 	
 	// Création d'une nouvelle tâche
 	@PostMapping("/tasks")
@@ -51,8 +53,13 @@ public class TaskController {
 	
 	// Modification d'une tâche par son id
 	@PutMapping("/tasks/{id}")
+	public String addTask(@RequestBody String body, @PathVariable Integer id) {
+		return task.updateTask(id, body);
+	}
 	
 	// Suppression d'une tâche par son id
 	@DeleteMapping("/tasks/{id}")
-	
+	public String removeTask(@PathVariable Integer id) {
+		return task.deleteTask((int) id);
+	}
 }
