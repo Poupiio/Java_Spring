@@ -18,17 +18,33 @@ public class EmpruntService {
 		this.empruntRepo = empruntRepo;
 	}
 	
+	// Sauvegarder un emprunt
 	Emprunt saveEmprunt(Emprunt emprunt) {
 		return empruntRepo.save(emprunt);
 	}
 	
+	// Récupérer tous les emprunts
 	Iterable<Emprunt> getAllEmprunts(){
 		return empruntRepo.findAll();
 	}
 	
-	void deleteById(Emprunt id) {}
+	// Supprimer un emprunt par son id
+	void deleteById(Long id) {
+		empruntRepo.findById(id);
+	}
 	
+	// Supprimer tous les emprunts
+	void deleteAll() {
+		empruntRepo.deleteAll();
+	}
+	
+	// Trouver un emprunt par son id
 	Optional<Emprunt> findById(Long id) {
 		return empruntRepo.findById(id);
+	}
+	
+	// Compter le nombre de livres existants
+	Long count(Emprunt emprunt) {
+		return empruntRepo.count();
 	}
 }
