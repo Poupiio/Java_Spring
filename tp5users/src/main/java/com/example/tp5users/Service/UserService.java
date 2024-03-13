@@ -34,6 +34,12 @@ public class UserService {
 		// On va chercher l'id de l'utilisateur
 		User user = this.repo.findById(id).get();
 		
+		// OU
+		// Je récupère l'id de l'optional de type User
+//		Optional <User> user = this.repo.findById(id);
+		// Et je crée un nouvel objet (nouveau user)
+//		User u = user.get();
+		
 		user.setName(data.getName());
 		user.setEmail(data.getEmail());
 		user.setPassword(data.getPassword());
