@@ -36,7 +36,7 @@ public class MessageService {
     }
 
     public MessageDTO updateMessage(Long id, MessageDTO data) {
-        // Je récupère l'id du message que je convertis en messageDTO grâce àa la fonction convertToDTO()
+        // Je récupère l'id du message que je convertis en messageDTO grâce à la fonction convertToDTO()
         MessageDTO msg = this.convertToDTO(repo.findById(id).get());
         // J'attribue les valeurs aux propriétés de MessageDTO
         msg.setMessage(data.getMessage());
@@ -67,7 +67,7 @@ public class MessageService {
     }
 
     public Message convertToMessage(MessageDTO msgDto) {
-        // J'instancie un objet de type MEssage auquel j'attribue les valeurs des propriétés de MessageDTO
+        // J'instancie un objet de type Message auquel j'attribue les valeurs des propriétés de MessageDTO
         Message msg = new Message();
         msg.setMessage(msgDto.getMessage());
         msg.setId(msgDto.getId());
@@ -79,5 +79,13 @@ public class MessageService {
 
         return msg;
     }
+
+    // Récupérer tous les messages envoyés et reçus par un utilisateur
+    /* public List<MessageDTO> getAllMessagesFromOneUser(Long id, Message msg) {
+        // Je récupère l'id du message que je convertis en messageDTO grâce à la fonction convertToDTO()
+        MessageDTO msgDto = this.convertToDTO(repo.findById(id).get());
+
+    }
+    */
 
 }

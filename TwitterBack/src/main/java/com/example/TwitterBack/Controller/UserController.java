@@ -45,7 +45,7 @@ public class UserController {
         return this.service.removeUser(id);
     }
 
-    /*
+    // Connexion
     @PostMapping("/login")
     public User connection(@RequestBody User data) throws Exception {
         try {
@@ -54,5 +54,4 @@ public class UserController {
             throw new RuntimeException(e);
         }
     }
-    */
 }

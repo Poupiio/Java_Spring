@@ -54,12 +54,13 @@ public class UserService {
         return "L'utilisateur avec l'id " + id + " a bien été supprimé";
     }
 
-    /* public User findUser(User data) throws Exception {
-        return this.getAll()
+    // Retrouver un user pour la connexion
+    public User findUser(User data) throws Exception {
+        return this.getAllUsers()
             .stream()
             .filter(user -> user.getUsername().equals(data.getUsername()) && user.getPassword().equals(data.getPassword()))
             .findFirst()
             .orElseThrow(() -> new Exception("Mauvais utilisateur ou mauvais mot de passe"));
     }
-    */
+
 }
