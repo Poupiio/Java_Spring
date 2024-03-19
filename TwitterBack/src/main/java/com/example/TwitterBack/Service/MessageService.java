@@ -22,7 +22,7 @@ public class MessageService {
     }
 
     public List<MessageDTO> getAllMessages() {
-        return this.repo.findAll().stream().map((val) -> this.convertToDTO(val).toList());
+        return this.repo.findAll().stream().map((val) -> this.convertToDTO(val)).toList();
     }
 
     public MessageDTO getMessageById(Long id) {
