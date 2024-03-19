@@ -29,7 +29,7 @@ public class UserService {
     }
 
     // User par son nom
-    public User findByName(String username) {
+    public Optional<User> findByName(String username) {
         return this.repo.findByUsername(username);
     }
 
@@ -45,7 +45,7 @@ public class UserService {
         user.setUsername(data.getUsername());
         user.setPassword(data.getPassword());
 
-        return this.repo.save(user);
+        return this.addUser(user);
     }
 
     // Supprimer un user
