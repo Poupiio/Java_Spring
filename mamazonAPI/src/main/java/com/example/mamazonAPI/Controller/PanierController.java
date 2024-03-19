@@ -5,10 +5,10 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.*;
 
 @RestController
-@RequestMapping("/user")
-public class UserController {
+@RequestMapping("/panier")
+public class PanierController {
     @Autowired
-    private UserService service;
+    private PanierService service;
 
     @GetMapping
 
@@ -20,5 +20,4 @@ public class UserController {
 
 
     @DeleteMapping
-
 }
