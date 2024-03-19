@@ -1,5 +1,6 @@
 package com.example.TwitterBack.Controller;
 
+import com.example.TwitterBack.Model.DTO.MessageDTO;
 import com.example.TwitterBack.Model.Entity.Message;
 import com.example.TwitterBack.Model.Entity.User;
 import com.example.TwitterBack.Service.MessageService;
@@ -16,22 +17,23 @@ public class MessageController {
     private MessageService service;
 
     @GetMapping
-    public List<Message> getAll() {
-        return this.service.getAll();
+    // On récupère les messages sous forme de MessageDTO
+    public List<MessageDTO> getAllMessages() {
+        return this.service.getAllMessages();
     }
 
     @GetMapping("/{id}")
-    public Optional<Message> getById(@PathVariable Long id) {
-        return this.service.getById(id);
+    public MessageDTO getMessageById(@PathVariable Long id) {
+        return this.service.getMessageById(id);
     }
 
     @PostMapping
-    public Message addMessage(@RequestBody Message data) {
-        return this.service.addMessage(data);
+    public MessageDTO createMessage(@RequestBody MessageDTO data) {
+        return this.service.createMessage(data);
     }
 
     @PutMapping("/{id}")
-    public Message updateMessage(@RequestBody Message body, @PathVariable Long id) {
+    public MessageDTO updateMessage(@RequestBody MessageDTO body, @PathVariable Long id) {
         return this.service.updateMessage(id, body);
     }
 

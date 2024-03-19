@@ -16,23 +16,23 @@ public class UserController {
     private UserService service;
 
     @GetMapping
-    public List<User> getAll() {
-        return this.service.getAll();
+    public List<User> getAllUsers() {
+        return this.service.getAllUsers();
     }
 
     @GetMapping("/name/{username}")
-    public Optional<User> getByName(@PathVariable String username) {
-        return service.findByName(username);
+    public Optional<User> findByUsername(@PathVariable String username) {
+        return service.findByUsername(username);
     }
 
     @GetMapping("/{id}")
     public Optional<User> getById(@PathVariable Long id) {
-        return this.service.getById(id);
+        return this.service.getUserById(id);
     }
 
     @PostMapping
-    public User addUser(@RequestBody User data) {
-        return this.service.addUser(data);
+    public User createUser(@RequestBody User data) {
+        return this.service.createUser(data);
     }
 
     @PutMapping("/{id}")
