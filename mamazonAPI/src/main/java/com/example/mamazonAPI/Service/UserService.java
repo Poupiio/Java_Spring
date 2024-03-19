@@ -84,4 +84,13 @@ public class UserService {
         this.repo.deleteById(id);
     }
 
+    // Retrouver un user pour la connexion
+    /* public User findUser(User data) throws Exception {
+        return this.getAllUsers()
+                .stream()
+                .filter(user -> user.getEmail().equals(data.getEmail()) && user.getPassword().equals(data.getPassword()))
+                .findFirst()
+                .orElseThrow(() -> new Exception("Mauvais utilisateur ou mauvais mot de passe"));
+    }
+    */
 }
