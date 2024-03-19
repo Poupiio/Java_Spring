@@ -39,6 +39,8 @@ public class UserService {
 //		Optional <User> user = this.repo.findById(id);
 		// Et je crée un nouvel objet (nouveau user)
 //		User u = user.get();
+//		u.setName(User.getName());
+//		Etc ...
 		
 		user.setName(data.getName());
 		user.setEmail(data.getEmail());
