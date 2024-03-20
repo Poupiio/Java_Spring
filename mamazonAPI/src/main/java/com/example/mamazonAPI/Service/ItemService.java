@@ -32,6 +32,7 @@ public class ItemService {
         item.setPrice(data.getPrice());
         item.setQuantity(data.getQuantity());
         item.setCategory(data.getCategory());
+        item.setPaniers(data.getPaniers());
 
         return this.createItem(item);
     }
