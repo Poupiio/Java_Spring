@@ -17,17 +17,14 @@ public class ItemService {
         return this.repo.findAll();
     }
 
-    // User par id
     public Optional<Item> getItemById(Long id) {
         return this.repo.findById(id);
     }
 
-    // Ajout d'un user
     public Item createItem(Item data) {
         return this.repo.save(data);
     }
 
-    // Update d'un user par id
     public Item updateItem(Long id, Item data) {
         Item item = this.repo.findById(id).get();
         item.setName(data.getName());
@@ -35,11 +32,10 @@ public class ItemService {
         item.setPrice(data.getPrice());
         item.setQuantity(data.getQuantity());
         item.setCategory(data.getCategory());
-        
+
         return this.createItem(item);
     }
 
-    // Supprimer un user
     public void removeItem(Long id) {
         this.repo.deleteById(id);
     }
