@@ -29,12 +29,13 @@ public class ItemService {
 
     // Update d'un user par id
     public Item updateItem(Long id, Item data) {
-        // Je récupère l'id de l'utilisateur
         Item item = this.repo.findById(id).get();
-        // item.setUsername(data.getUsername());
-        // item.setPassword(data.getPassword());
-
-        // A COMPLETER DEMAIN !!!!!!!!!!!!!!!!!!!!!!!!
+        item.setName(data.getName());
+        item.setPhoto(data.getPhoto());
+        item.setPrice(data.getPrice());
+        item.setQuantity(data.getQuantity());
+        item.setCategory(data.getCategory());
+        
         return this.createItem(item);
     }
 
