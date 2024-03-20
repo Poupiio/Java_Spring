@@ -28,7 +28,6 @@ public class PanierService {
 
     public Panier updatePanier(Long id, Panier data) {
         Panier panier = this.repo.findById(id).get();
-        panier.setItems(data.getItems());
 
         return this.createPanier(panier);
     }

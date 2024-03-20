@@ -27,7 +27,6 @@ public class UserService {
         userDTO.setName(user.getName());
         userDTO.setEmail(user.getEmail());
         userDTO.setAge(user.getAge());
-        userDTO.setPanier(user.getPanier());
 
         return userDTO;
     }
@@ -40,7 +39,6 @@ public class UserService {
         user.setEmail(userDto.getEmail());
         user.setPassword(user.getPassword());
         user.setAge(userDto.getAge());
-        user.setPanier(userDto.getPanier());
 
         return user;
     }

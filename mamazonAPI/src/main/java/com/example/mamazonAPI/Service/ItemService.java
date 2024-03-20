@@ -27,12 +27,7 @@ public class ItemService {
 
     public Item updateItem(Long id, Item data) {
         Item item = this.repo.findById(id).get();
-        item.setName(data.getName());
-        item.setPhoto(data.getPhoto());
-        item.setPrice(data.getPrice());
-        item.setQuantity(data.getQuantity());
-        item.setCategory(data.getCategory());
-        item.setPaniers(data.getPaniers());
+
 
         return this.createItem(item);
     }

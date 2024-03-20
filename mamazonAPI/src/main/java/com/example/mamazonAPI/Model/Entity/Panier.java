@@ -11,11 +11,14 @@ public class Panier {
     @Id
     @GeneratedValue(strategy = GenerationType.TABLE)
 
-    private Long id;
-    private List<Item> items;
+    public Long id;
 
-    @ManyToMany(mappedBy = "paniers")
-    private Set<Item> listItems = new HashSet<>();
+    @ManyToMany
+    @JoinTable(name="panier_items",
+            joinColumns = @JoinColumn(name="panier_id"),
+            inverseJoinColumns = @JoinColumn(name="item_id")
+    )
+    public Set<Item> items = new HashSet<>();
 
     public Long getId() {
         return id;
@@ -25,20 +28,13 @@ public class Panier {
         this.id = id;
     }
 
-    public List<Item> getItems() {
+
+    public Set<Item> getListItems() {
         return items;
     }
 
-    public void setItems(List<Item> items) {
-        this.items = items;
-    }
-
-    public Set<Item> getListItems() {
-        return listItems;
-    }
-
     public void setListItems(Set<Item> listItems) {
-        this.listItems = listItems;
+        this.items = listItems;
     }
 
 }

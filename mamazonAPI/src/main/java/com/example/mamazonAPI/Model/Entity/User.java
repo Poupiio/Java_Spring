@@ -1,9 +1,6 @@
 package com.example.mamazonAPI.Model.Entity;
 
-import jakarta.persistence.Entity;
-import jakarta.persistence.GeneratedValue;
-import jakarta.persistence.GenerationType;
-import jakarta.persistence.Id;
+import jakarta.persistence.*;
 
 @Entity
 public class User {
@@ -15,6 +12,8 @@ public class User {
     private String email;
     private String password;
     private Long age;
+    @OneToOne
+    @JoinColumn(name = "panier_id")
     private Panier panier;
 
     public Long getId() {

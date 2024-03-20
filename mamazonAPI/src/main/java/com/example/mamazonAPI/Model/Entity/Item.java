@@ -1,5 +1,6 @@
 package com.example.mamazonAPI.Model.Entity;
 
+
 import jakarta.persistence.*;
 
 import java.util.HashSet;
@@ -10,18 +11,14 @@ public class Item {
     @Id
     @GeneratedValue(strategy = GenerationType.TABLE)
 
-    private Long id;
-    private String name;
-    private String photo;
-    private Double price;
-    private Long quantity;
-    private String category;
+    public Long id;
+    public String name;
+    public String photo;
+    public Double price;
+    public Long quantity;
+    public String category;
 
-    @ManyToMany
-    @JoinTable(name="items_panier",
-            joinColumns = @JoinColumn(name="item_id"),
-            inverseJoinColumns = @JoinColumn(name="panier_id")
-    )
+    @ManyToMany(mappedBy = "items")
     private Set<Panier> paniers = new HashSet<>();
 
     public Long getId() {
